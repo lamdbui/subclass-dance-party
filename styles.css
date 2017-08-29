@@ -31,6 +31,10 @@ body, a:link, a:visited, a:active{
 
 }
 
+.rotate {
+  
+}
+
 .topbar{
   height:32px;
   background-color: #555;
@@ -41,6 +45,33 @@ body, a:link, a:visited, a:active{
 
 .dancer {
   position:absolute;
+/*  animation-name: rotateOut;
+  animation-duration:4000ms;*/
+}
+
+.dancer:hover {
+/*  transition: transform 1s linear;
+  transform-style: preserve-3D;
+  transform: rotate(-360deg);
+  animation-iteration-count: infinite;*/
+
+/*    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 4000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: rotate;
+    -moz-animation-duration: 4000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: rotate;
+    -ms-animation-duration: 4000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    */
+    animation-name: rotate;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;  
 }
 
 .blinky {
@@ -49,9 +80,40 @@ body, a:link, a:visited, a:active{
 }
 
 .blanka {
-  /*width: 150%;
-  height: 150%;*/
 }
 
 .chunli {
+}
+
+.focus {
+/*  margin-top: 50%;
+  margin-left: 50%;*/
+/*  transform: translate(200px, 200px);
+*/}
+
+/*KEYFRAMES*/
+/*
+@-webkit-keyframes rotate {
+  from{-webkit-transform:rotate(0deg);}
+  to{-webkit-transform:rotate(360deg);}
+}
+
+@-moz-keyframes rotate {
+  from{-moz-transform:rotate(0deg);}
+  to{-moz-transform:rotate(360deg);}
+}
+
+@-ms-keyframes rotate {
+  from{-ms-transform:rotate(0deg);}
+  to{-ms-transform:rotate(360deg);}
+}*/
+
+@keyframes rotate {
+  from {transform:rotate(0deg);} 
+  to {transform:rotate(360deg);}
+}
+
+@keyframes rotateOut {
+  from {transform:rotate(360deg);} 
+  to {transform:rotate(0deg);}
 }
