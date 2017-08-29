@@ -1,6 +1,6 @@
 var BlankaDancer = function(top, left) {
   Dancer.call(this, top, left);
-  this.$node.append('<img class="dancer blanka" src="' + randomBlanka() + '">');
+  this.$node.append('<img class="blanka" src="' + randomBlanka() + '">');
 };
 
 BlankaDancer.prototype = Object.create(Dancer.prototype);

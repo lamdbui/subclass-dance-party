@@ -1,6 +1,6 @@
 var ChunLiDancer = function(top, left) {
   Dancer.call(this, top, left);
-  this.$node.append('<img class="dancer chunli" src="' + randomChunLi() + '">');
+  this.$node.append('<img class="chunli" src="' + randomChunLi() + '">');
 };
 
 ChunLiDancer.prototype = Object.create(Dancer.prototype);

@@ -36,9 +36,15 @@ $(document).ready(function() {
     var width = $('body').width();
     var dancerOffset = (width * .9) / window.dancers.length;
 
-    window.dancers.forEach(function(dancer, index) {
-      dancer.setPosition(height / 2, dancerOffset * index);
-    });
+    var $jDancers = $('.dancer');
+
+    for (var i = 0; i < $jDancers.length; i++) {
+      var $j = $jDancers.eq(i);
+      $j.animate({
+        left: dancerOffset * i,
+        top: height / 2
+      }, 5000, function() {});      
+    }
 
   });
   
