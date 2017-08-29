@@ -25,3 +25,9 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.blanka {
+  /*width: 150%;
+  height: 150%;*/
+  position:absolute;
+}
