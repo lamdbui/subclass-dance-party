@@ -11,25 +11,19 @@
 //   return blinkyDancer;
 // };
 
-// var BlinkyDancer = function(top, left, timeBetweenSteps) {
-//   Dancer.call(this, top, left, timeBetweenSteps);
-//   //this.oldStep = Dancer.prototype.step;
-// };
+var BlinkyDancer = function(top, left, timeBetweenSteps) {
+  Dancer.call(this, top, left, timeBetweenSteps);
+  this.step();
+};
 
-// BlinkyDancer.prototype = Object.create(Dancer.prototype);
-// BlinkyDancer.prototype.constructor = BlinkyDancer;
+BlinkyDancer.prototype = Object.create(Dancer.prototype);
+BlinkyDancer.prototype.constructor = BlinkyDancer;
 
-// // BlinkyDancer.prototype.stepOne = function() {
-// //   setTimeout(this.step, this.timeBetweenSteps);
-// // };
+BlinkyDancer.prototype.step = function() {
+  Dancer.prototype.step.call(this);
+  this.$node.toggle();
+};
 
-// BlinkyDancer.prototype.step = function() {
-//   //this.stepOne();
-//   //this.oldStep();
-//   Dancer.prototype.step.call(this);
-//   this.$node.toggle();
-// };
-
-// var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
-//   return new BlinkyDancer(top, left, timeBetweenSteps);
-// };
+var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
+  return new BlinkyDancer(top, left, timeBetweenSteps);
+};
