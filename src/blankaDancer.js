@@ -1,9 +1,6 @@
 var BlankaDancer = function(top, left) {
   Dancer.call(this, top, left);
-  this.$node = $('<img class="dancer blanka" src="' + randomBlanka() + '">');
-  this.step();
-  // why is this necessary?
-  this.setPosition(top, left);
+  this.$node.append('<img class="dancer blanka" src="' + randomBlanka() + '">');
 };
 
 BlankaDancer.prototype = Object.create(Dancer.prototype);

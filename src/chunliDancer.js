@@ -1,13 +1,12 @@
 var ChunLiDancer = function(top, left) {
   Dancer.call(this, top, left);
-  this.$node = $('<img class="dancer chunli" src="' + randomChunLi() + '">');
-  this.step();
-  // why is this necessary?
-  this.setPosition(top, left);
+  this.$node.append('<img class="dancer chunli" src="' + randomChunLi() + '">');
 };
 
 ChunLiDancer.prototype = Object.create(Dancer.prototype);
 ChunLiDancer.prototype.constructor = ChunLiDancer;
+
+
 
 var randomChunLi = function() {
   var imgs = ['assets/kicking-chunli.gif', 'assets/spinning-chunli.gif'];
