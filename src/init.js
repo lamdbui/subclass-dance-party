@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  window.currentDancer = undefined;
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -29,21 +30,21 @@ $(document).ready(function() {
     );
     
     $('body').append(dancer.$node);
-    dancer.$node.on('click', function(event) {
-      var height = $('body').height();
-      var width = $('body').width();
+    // dancer.$node.on('click', function(event) {
+    //   var height = $('body').height();
+    //   var width = $('body').width();
       
-      // if ($(this).hasClass('focus')) {
-      //   $(this).removeClass('focus');
-      // } else {
-      //   $(this).addClass('focus');
-      // }
+    //   // if ($(this).hasClass('focus')) {
+    //   //   $(this).removeClass('focus');
+    //   // } else {
+    //   //   $(this).addClass('focus');
+    //   // }
       
-      $(this).animate({
-        left: width / 2,
-        top: height / 2
-      }, 5000, function() {});      
-    });
+    //   $(this).animate({
+    //     left: width / 2,
+    //     top: height / 2
+    //   }, 5000, function() {});      
+    // });
     
     window.dancers.push(dancer);
   });
@@ -65,6 +66,34 @@ $(document).ready(function() {
 
   });
   
-  
+  $('body').on('click', '.dancer', function(event) {
+    var height = $('body').height();
+    var width = $('body').width();
+    
+    // if ($(this).hasClass('focus')) {
+    //   $(this).removeClass('focus');
+    // } else {
+    //   $(this).addClass('focus');
+    // }
+    
+    window.currentDancer = $(this);
+    
+    $(this).animate({
+      left: width / 2,
+      top: height / 2
+    }, 1000, function() {});  
+    
+    event.stopPropogation();
+  });
+
+
+  $('body').on('click', function(event) {
+    if (window.currentDancer) {
+      window.currentDancer.animate({
+        left: event.clientX,
+        top: event.clientY
+      }, 1000, function() {});
+    }
+  });  
 });
 
